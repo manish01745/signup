@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        {% for form in form %}
+         {{form.label_tag}} {{form}} {{form.errors | striptags}} <br><br>
+        {%endfor%} 
+        <button>submit</button>
+ 
+        <h3><a href="{% url 'login' %}"> signup</a></h3>
+         
+         
+     </form>
+    
+</body>
+</html>
